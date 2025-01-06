@@ -1,7 +1,6 @@
 import React from "react";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { FaBoxArchive } from "react-icons/fa6";
-
 import Image from "next/image";
 import Link from "next/link";
 
@@ -33,11 +32,12 @@ export default function Cart() {
         </div>
       </div>
 
-      {/*  */}
       <div className="w-full flex flex-col lg:flex-row justify-center md:items-center lg:items-start gap-7 py-[3rem] lg:py-[4rem] px-[2rem] md:px-[3rem] lg:px-[5rem]">
-        <div className="md:w-[680px] flex  sm:flex-col gap-6">
-          <div className=" md:w-[100%] sm:bg-[#FFF9E5] flex flex-col sm:flex-row justify-between items-center  py-2 sm:px-8 lg:px-3">
-            <p className=" bg-[#FFF9E5] mt-8 py-2 sm:mt-0 sm:ml-10 px-6">Product</p>
+        <div className="md:w-[680px] flex sm:flex-col gap-6">
+          <div className="md:w-[100%] sm:bg-[#FFF9E5] flex flex-col sm:flex-row justify-between items-center py-2 sm:px-8 lg:px-3">
+            <p className="bg-[#FFF9E5] mt-8 py-2 sm:mt-0 sm:ml-10 px-6">
+              Product
+            </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 xl:gap-8">
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 xl:gap-5">
                 <p className="bg-[#FFF9E5] py-2 px-5">Price</p>
@@ -46,7 +46,7 @@ export default function Cart() {
               <p className="bg-[#FFF9E5] py-2 px-5">Subtotal</p>
             </div>
           </div>
-          <div className="w-[100%] flex flex-col sm:flex-row items-center gap-8 p-2 ">
+          <div className="w-[100%] flex flex-col sm:flex-row items-center gap-8 p-2">
             <div className="w-[106px] h-[106px] bg-[#fbebb5] rounded-[10px] flex items-center">
               <Image
                 src="/Asgaard_sofa.png"
@@ -70,22 +70,24 @@ export default function Cart() {
             </div>
           </div>
         </div>
-        <div className="">
+        <div>
           <div className="bg-[#FFF9E5] md:w-[680px] lg:w-[393px] p-[1rem_3rem_4rem] text-center capitalize">
             <h1 className="text-[32px] font-semibold mb-10">Cart Totals</h1>
-            <div className="flex justify-between  my-[1.5rem]">
+            <div className="flex justify-between my-[1.5rem]">
               <h1 className="text-[1.1rem] font-medium">Subtotal</h1>
               <p className="text-[#9F9F9F]">Rs. 250,000.00</p>
             </div>
             <div className="flex justify-between my-[1.5rem]">
-              <h1 className="text-[1.1rem] font-medium">total</h1>
+              <h1 className="text-[1.1rem] font-medium">Total</h1>
               <p className="text-[#B88E2F] text-[1.25rem] font-medium">
                 Rs. 250,000.00
               </p>
             </div>
-            <button className="border-[1px] rounded-[15px] px-[3rem] py-[0.5rem] mt-10 border-black capitalize">
-              check out
-            </button>
+            <Link href="/checkout">
+              <button className="border-[1px] rounded-[15px] px-[3rem] py-[0.5rem] mt-10 border-black capitalize">
+                check out
+              </button>
+            </Link>
           </div>
         </div>
       </div>

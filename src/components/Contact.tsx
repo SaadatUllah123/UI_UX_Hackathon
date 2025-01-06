@@ -1,7 +1,5 @@
 import React from "react";
-import { FaLocationDot } from "react-icons/fa6";
-import { FaPhone } from "react-icons/fa6";
-import { FaClock } from "react-icons/fa";
+import { FaLocationDot, FaPhone, FaClock } from "react-icons/fa6";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
 import Image from "next/image";
@@ -35,17 +33,17 @@ export default function Contact() {
         </div>
       </div>
 
-      <div className="w-[100%] px-[2rem] md:px-[5rem] lg:px-[10rem] py-[2.5rem] capitalize ">
+      <div className="w-full px-[2rem] md:px-[5rem] lg:px-[10rem] py-[2.5rem] capitalize">
         <div className="text-center lg:px-[8rem] pb-[4rem]">
           <h1 className="text-[32px] font-semibold">Get In Touch With Us</h1>
-          <p className="text-[#9F9F9F] xl:px-[6rem] ">
+          <p className="text-[#9F9F9F] xl:px-[6rem]">
             For More Information About Our Product & Services. Please Feel Free
             To Drop Us An Email. Our Staff Always Be There To Help You Out. Do
             Not Hesitate!
           </p>
         </div>
-        <div className="flex flex-col md:flex-row justify-center  gap-[3rem]">
-          <div className="basis-[50%]">
+        <div className="flex flex-col md:flex-row justify-center gap-[3rem]">
+          <div className="basis-[50%] m-auto md:m-0">
             <div className="flex gap-5 py-6">
               <FaLocationDot className="text-[1.5rem]" />
               <div>
@@ -60,7 +58,7 @@ export default function Contact() {
               <FaPhone className="text-[1.5rem]" />
               <div>
                 <h1 className="text-[1.5rem] font-medium">Phone</h1>
-                <p>Mobile: +(84) 546-6789s</p>
+                <p>Mobile: +(84) 546-6789</p>
                 <p>Hotline: +(84) 456-6789</p>
               </div>
             </div>
@@ -77,39 +75,43 @@ export default function Contact() {
           </div>
           <div className="basis-[50%]">
             <div className="flex flex-col gap-3 my-6">
-              <label htmlFor="">Your name</label>
+              <label htmlFor="name">Your name</label>
               <input
+                id="name"
                 type="text"
                 placeholder="abc"
-                className=" border-[1px] rounded-[10px] p-3 md:px-4 outline-none "
+                className="border-[1px] rounded-[10px] p-3 md:px-4 outline-none"
               />
             </div>
             <div className="flex flex-col gap-3 my-6">
-              <label htmlFor="">Email address</label>
+              <label htmlFor="email">Email address</label>
               <input
+                id="email"
                 type="text"
                 placeholder="Abc@def.com"
-                className=" border-[1px] rounded-[10px] p-3 md:px-4 outline-none "
+                className="border-[1px] rounded-[10px] p-3 md:px-4 outline-none"
               />
             </div>
             <div className="flex flex-col gap-3 my-6">
-              <label htmlFor="">Subject</label>
+              <label htmlFor="subject">Subject</label>
               <input
+                id="subject"
                 type="text"
                 placeholder="This is an optional"
-                className=" border-[1px] rounded-[10px] p-3 md:px-4 outline-none "
+                className="border-[1px] rounded-[10px] p-3 md:px-4 outline-none"
               />
             </div>
             <div className="flex flex-col gap-3 my-6">
-              <label htmlFor="">Message</label>
+              <label htmlFor="message">Message</label>
               <input
+                id="message"
                 type="text"
-                placeholder="Hi! id like to ask about"
-                className=" border-[1px] rounded-[10px] p-3 md:px-4 outline-none "
+                placeholder="Hi! I'd like to ask about"
+                className="border-[1px] rounded-[10px] p-3 md:px-4 outline-none"
               />
             </div>
             <button className="border-[1px] rounded-[15px] px-[3rem] py-[0.5rem] border-black capitalize">
-              submit
+              Submit
             </button>
           </div>
         </div>

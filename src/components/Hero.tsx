@@ -30,6 +30,27 @@ export default function Hero() {
       price: "Rs. 25,000.00",
     },
   ];
+
+  const blogPosts = [
+    {
+      src: "/blogs/blog_1.jpeg",
+      title: "Going all-in with millennial design",
+      date: "12th Oct 2022",
+      time: "5 min",
+    },
+    {
+      src: "/blogs/blog_2.jpeg",
+      title: "Going all-in with millennial design",
+      date: "12th Oct 2022",
+      time: "5 min",
+    },
+    {
+      src: "/blogs/blog_3.jpeg",
+      title: "Going all-in with millennial design",
+      date: "12th Oct 2022",
+      time: "5 min",
+    },
+  ];
   return (
     <main>
       <section>
@@ -38,7 +59,7 @@ export default function Hero() {
             <h1 className="text-[35px] sm:text-[40px] md:text-[48px] lg:text-[53px] xl:text-[62px] font-medium">
               Rocket single seater
             </h1>
-            <h2 className="w-[121px] text-[24px] font-medium border-b-2 border-black mt-3 mx-auto md:mx-0">
+            <h2 className="w-[121px] text-[24px] font-medium border-b-2 border-black mt-3 pb-2 mx-auto md:mx-0">
               shop now
             </h2>
           </div>
@@ -101,12 +122,13 @@ export default function Hero() {
           {Products.map((product, index) => {
             return (
               <Link href={`/shop/${index + 1}`} key={index}>
-                <div>
+                <div className="">
                   <Image
                     src={product.img}
                     alt={product.title}
-                    width={500}
-                    height={500}
+                    width={1000}
+                    height={1000}
+                    className="w-full h-[287px]"
                   />
                   <h1>{product.title}</h1>
                   <p>{product.price}</p>
@@ -148,75 +170,31 @@ export default function Hero() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center gap-10">
-            <div className="">
-              <Image
-                src={"/blogs/blog_1.jpeg"}
-                alt=""
-                width={393}
-                height={393}
-                className="rounded-[10px]"
-              />
-              <div className="py-5">
-                <p className="text-[20px]">
-                  Going all-in with millennial design
-                </p>
-                <h1 className="text-[24px] font-medium py-2">
-                  Read More
-                  <div className="border-b-2 w-[115px] border-black mx-auto"></div>
-                </h1>
-
-                <p className="flex justify-center items-center gap-2">
-                  <FaRegClock /> 5 min <CiCalendar className="text-[1.25rem]" />
-                  12th Oct 2022
-                </p>
+            {blogPosts.map((post, index) => (
+              <div key={index}>
+                <Link href="/blog">
+                  <Image
+                    src={post.src}
+                    alt={post.title}
+                    width={393}
+                    height={393}
+                    className="rounded-[10px]"
+                  />
+                </Link>
+                <div className="py-5">
+                  <p className="text-[20px]">{post.title}</p>
+                  <h1 className="text-[24px] font-medium py-2">
+                    <Link href="/blog">Read More</Link>
+                    <div className="border-b-2 w-[115px] border-black mx-auto"></div>
+                  </h1>
+                  <p className="flex justify-center items-center gap-2">
+                    <FaRegClock /> {post.time}{" "}
+                    <CiCalendar className="text-[1.25rem]" />
+                    {post.date}
+                  </p>
+                </div>
               </div>
-            </div>
-            <div className="">
-              <Image
-                src={"/blogs/blog_2.jpeg"}
-                alt=""
-                width={393}
-                height={393}
-                className="rounded-[10px]"
-              />
-              <div className="py-5">
-                <p className="text-[20px]">
-                  Going all-in with millennial design
-                </p>
-                <h1 className="text-[24px] font-medium py-2">
-                  Read More
-                  <div className="border-b-2 w-[115px] border-black mx-auto"></div>
-                </h1>
-
-                <p className="flex justify-center items-center gap-2">
-                  <FaRegClock /> 5 min <CiCalendar className="text-[1.25rem]" />
-                  12th Oct 2022
-                </p>
-              </div>
-            </div>
-            <div className="">
-              <Image
-                src={"/blogs/blog_3.jpeg"}
-                alt=""
-                width={393}
-                height={393}
-                className="rounded-[10px]"
-              />
-              <div className="py-5">
-                <p className="text-[20px]">
-                  Going all-in with millennial design
-                </p>
-                <h1 className="text-[24px] font-medium py-2">
-                  Read More
-                  <div className="border-b-2 w-[115px] border-black mx-auto"></div>
-                </h1>
-
-                <p className="flex justify-center items-center gap-2">
-                  <FaRegClock /> 5 min <CiCalendar className="text-[1.25rem]" />
-                  12th Oct 2022
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
           <div className="">
             <h1 className="text-[20px] border-b-2 w-[115px] border-black mx-auto mt-10">

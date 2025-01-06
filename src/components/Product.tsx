@@ -1,165 +1,139 @@
 "use client";
 import Image from "next/image";
-// components/ProductDetail.js
-import React, { useState } from "react";
+import Link from "next/link";
 
-const ProductDetail = () => {
-  const [quantity, setQuantity] = useState(1);
+// components/ProductDetail.js
+// import React, { useState } from "react";
+import ProductDetails from "./ProductDetails";
+
+const Product = () => {
+  // const [quantity, setQuantity] = useState(1);
+  const Products = [
+    {
+      title: "Trenton modular sofa_3",
+      img: "/products/product_1.png",
+      price: "Rs. 25,000.00",
+    },
+    {
+      title: "Granite dining table with dining chair",
+      img: "/products/product_2.png",
+      price: "Rs. 25,000.00",
+    },
+    {
+      title: "Outdoor bar table and stool",
+      img: "/products/product_3.png",
+      price: "Rs. 25,000.00",
+    },
+    {
+      title: "Plain console with teak mirror",
+      img: "/products/product_4.png",
+      price: "Rs. 25,000.00",
+    },
+  ];
+
+  // const [activeTab, setActiveTab] = useState("description");
+
+  // const handleTabClick = () => {
+  //   setActiveTab("");
+  // };
 
   return (
-    <div className="container mx-auto p-4">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Image Gallery */}
-        <div className="flex justify-center items-center gap-5">
-          <div className="flex flex-col gap-5 items-start justify-start">
-            <div className="w-[75px] h-[80px] bg-[#FFF9E5] rounded-[10px] flex justify-center items-center">
-              <Image
-                src="/Maya_sofa_three_seater_2.png"
-                alt="Thumbnail"
-                width={83}
-                height={55}
-                className="w-16 h-16 rounded-lg cursor-pointer"
-              />
-            </div>
-            <div className="w-[75px] h-[80px] bg-[#FFF9E5] rounded-[10px] flex justify-center items-center">
-              <Image
-                src="/Outdoor_sofa_set _2.png"
-                alt="Thumbnail"
-                width={83}
-                height={55}
-                className="w-16 h-16 rounded-lg cursor-pointer"
-              />
-            </div>
-            <div className="w-[75px] h-[80px] bg-[#FFF9E5] rounded-[10px] flex justify-center items-center">
-              <Image
-                src="/Outdoor_sofa_set_2.png"
-                alt="Thumbnail"
-                width={83}
-                height={55}
-                className="w-16 h-16 rounded-lg cursor-pointer"
-              />
-            </div>
-            <div className="w-[75px] h-[80px] bg-[#FFF9E5] rounded-[10px] flex justify-center items-center">
-              <Image
-                src="/Stuart_sofa_1.png"
-                alt="Thumbnail"
-                width={83}
-                height={55}
-                className="w-16 h-16 rounded-lg cursor-pointer"
-              />
-            </div>
-          </div>
-          <div className="w-[423px] h-[500px] bg-[#FFF9E5] rounded-[10px] flex justify-center items-center">
-            <Image
-              src="/Asgaard_sofa.png"
-              alt="Product"
-              width={481}
-              height={391}
-              className="w-full h-auto rounded-lg"
-            />
-          </div>
-        </div>
+    <section>
+      <ProductDetails />
+      
+      {/*  */}
+      <div className="border-y border-[#D9D9D9] text-[#9F9F9F]">
+        <div className="py-7 px-[2rem] lg:px-[4rem] xl:px-[6rem]">
+          <ul className="flex flex-wrap justify-center gap-5 md:gap-10">
+            <li className="text-[20px] lg:text-[24px] text-black">
+              Description
+            </li>
+            <li className="text-[20px] lg:text-[24px] ">
+              Additional Information
+            </li>
+            <li className="text-[20px] lg:text-[24px]">Reviews [5]</li>
+          </ul>
 
-        {/* Product Details */}
-        <div className="flex flex-col">
-          <h1 className="text-2xl font-bold">Asgaard Sofa</h1>
-          <p className="text-xl text-gray-500">Rs. 250,000.00</p>
-          <div className="flex items-center mt-2">
-            <span className="flex items-center text-yellow-400">
-              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                <path d="M12 .587l3.668 7.431 8.2 1.192-5.92 5.764 1.396 8.1-7.344-3.861-7.343 3.861 1.396-8.1-5.92-5.764 8.2-1.192z" />
-              </svg>
-              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                <path d="M12 .587l3.668 7.431 8.2 1.192-5.92 5.764 1.396 8.1-7.344-3.861-7.343 3.861 1.396-8.1-5.92-5.764 8.2-1.192z" />
-              </svg>
-              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                <path d="M12 .587l3.668 7.431 8.2 1.192-5.92 5.764 1.396 8.1-7.344-3.861-7.343 3.861 1.396-8.1-5.92-5.764 8.2-1.192z" />
-              </svg>
-              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                <path d="M12 .587l3.668 7.431 8.2 1.192-5.92 5.764 1.396 8.1-7.344-3.861-7.343 3.861 1.396-8.1-5.92-5.764 8.2-1.192z" />
-              </svg>
-              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                <path d="M12 .587l3.668 7.431 8.2 1.192-5.92 5.764 1.396 8.1-7.344-3.861-7.343 3.861 1.396-8.1-5.92-5.764 8.2-1.192z" />
-              </svg>
-            </span>
-            <span className="ml-2 text-gray-600">(5 Customer Reviews)</span>
-          </div>
-          <p className="mt-4 text-gray-700">
-            Setting the bar as one of the loudest speakers in its class, the
-            Elac Uni-Fi UB5 has a well-balanced sound which boasts a clear
-            midrange and extended highs for a more natural sound.
-          </p>
-          <div className="mt-4">
-            <h2 className="text-lg font-semibold">Size</h2>
-            <div className="flex items-center mt-2 space-x-2">
-              <button className="w-10 h-10 bg-gray-200 rounded-full focus:outline-none">
-                L
-              </button>
-              <button className="w-10 h-10 bg-gray-200 rounded-full focus:outline-none">
-                XL
-              </button>
-              <button className="w-10 h-10 bg-gray-200 rounded-full focus:outline-none">
-                XXL
-              </button>
+          <div className={`p-6`}>
+            <div className=" md:px-[5rem]">
+              <p className="">
+                Embodying the raw, wayward spirit of rock ‘n’ roll, the Kilburn
+                portable active stereo speaker takes the unmistakable look and
+                sound of Marshall, unplugs the chords, and takes the show on the
+                road.
+              </p>
+              <p className=" mt-3">
+                Weighing in under 7 pounds, the Kilburn is a lightweight piece
+                of vintage styled engineering. Setting the bar as one of the
+                loudest speakers in its class, the Kilburn is a compact,
+                stout-hearted hero with a well-balanced audio which boasts a
+                clear midrange and extended highs for a sound that is both
+                articulate and pronounced. The analogue knobs allow you to fine
+                tune the controls to your personal preferences while the
+                guitar-influenced leather strap enables easy and stylish travel.
+              </p>
+            </div>
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-5 ">
+              <div className="h-[348px] bg-[#FFF9E5] rounded-[10px] ">
+                <Image
+                  src="/cloud_sofa_1.png"
+                  alt="Sofa Image"
+                  width={828}
+                  height={551}
+                  className=""
+                />
+              </div>
+              <div className=" h-[348px] bg-[#FFF9E5] rounded-[10px]">
+                <Image
+                  src="/cloud_sofa_2.png"
+                  alt="Sofa Image"
+                  width={828}
+                  height={551}
+                  className=""
+                />
+              </div>
             </div>
           </div>
-          <div className="mt-4">
-            <h2 className="text-lg font-semibold">Color</h2>
-            <div className="flex items-center mt-2 space-x-2">
-              <button className="w-8 h-8 bg-purple-600 rounded-full focus:outline-none"></button>
-              <button className="w-8 h-8 bg-black rounded-full focus:outline-none"></button>
-              <button className="w-8 h-8 bg-gray-300 rounded-full focus:outline-none"></button>
-              <button className="w-8 h-8 bg-yellow-600 rounded-full focus:outline-none"></button>
-            </div>
-          </div>
-          <div className="mt-4">
-            <div className="flex items-center">
-              <button
-                onClick={() => setQuantity(quantity - 1)}
-                className="w-10 h-10 bg-gray-200 rounded-full focus:outline-none"
-              >
-                -
-              </button>
-              <input
-                type="text"
-                value={quantity}
-                readOnly
-                className="w-12 text-center bg-white border border-gray-200 rounded-full mx-2"
-              />
-              <button
-                onClick={() => setQuantity(quantity + 1)}
-                className="w-10 h-10 bg-gray-200 rounded-full focus:outline-none"
-              >
-                +
-              </button>
-            </div>
-            <button className="w-full mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg">
-              Add To Cart
-            </button>
-          </div>
-          <div className="mt-4">
-            <p className="text-gray-600">SKU: SS001</p>
-            <p className="text-gray-600">Category: Sofas</p>
-            <p className="text-gray-600">Tags: Sofa, Chair, Home, Shop</p>
-          </div>
-          <div className="mt-4 flex items-center space-x-4">
-            <button className="p-2 bg-gray-200 rounded-full">
-              <i className="fab fa-facebook-f"></i>
-            </button>
-            <button className="p-2 bg-gray-200 rounded-full">
-              <i className="fab fa-twitter"></i>
-            </button>
-            <button className="p-2 bg-gray-200 rounded-full">
-              <i className="fab fa-linkedin-in"></i>
-            </button>
-            <button className="p-2 bg-gray-200 rounded-full">
-              <i className="fab fa-instagram"></i>
-            </button>
-          </div>
+
+          
         </div>
       </div>
-    </div>
+
+      {/*  */}
+      <div className="bg-white py-10 px-[2rem] lg:px-[4rem] xl:px-[6rem]">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-semibold">Top Picks For You</h2>
+          <p className="text-gray-600 mt-2 md:px-[5rem]">
+            Find a bright ideal to suit your taste with our great selection of
+            suspension, floor and table lights.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 lg:grid-cols-4 place-items-center ">
+          {Products.map((product, index) => {
+            return (
+              <Link href={`/shop/${index + 1}`} key={index}>
+                <div>
+                  <Image
+                    src={product.img}
+                    alt={product.title}
+                    width={500}
+                    height={500}
+                  />
+                  <h1>{product.title}</h1>
+                  <p>{product.price}</p>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+        <div>
+          <h2 className="w-[121px] text-[24px] font-medium border-b-[2px] border-black m-auto mt-14">
+            View More
+          </h2>
+        </div>
+      </div>
+    </section>
   );
 };
 
-export default ProductDetail;
+export default Product;

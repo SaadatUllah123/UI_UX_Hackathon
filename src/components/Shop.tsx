@@ -162,12 +162,13 @@ export default function Shop() {
           {Products.map((product, index) => {
             return (
               <Link href={`/shop/${index + 1}`} key={index}>
-                <div>
+                <div className="">
                   <Image
                     src={product.img}
                     alt={product.title}
-                    width={500}
-                    height={500}
+                    width={1000}
+                    height={1000}
+                    className="w-full h-[287px]"
                   />
                   <h1>{product.title}</h1>
                   <p>{product.price}</p>

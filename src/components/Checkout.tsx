@@ -1,6 +1,5 @@
 import React from "react";
 import { MdKeyboardArrowRight } from "react-icons/md";
-
 import Image from "next/image";
 import Link from "next/link";
 
@@ -12,7 +11,7 @@ export default function Checkout() {
         <div className="absolute inset-0 flex flex-col items-center justify-center">
           <Image
             src="/icon_image.png"
-            alt=""
+            alt="Checkout Icon"
             width={60}
             height={60}
             className="md:w-[77px]"
@@ -33,96 +32,106 @@ export default function Checkout() {
       </div>
 
       <div className="flex flex-col lg:flex-row justify-center lg:gap-[4rem] xl:gap-[8rem] px-[2rem] md:px-[5rem] py-[2.5rem] capitalize">
-        <div className=" py-[1rem] ">
-          <h1 className="text-[36px] font-semibold ">Billing details</h1>
+        <div className="py-[1rem]">
+          <h1 className="text-[36px] font-semibold">Billing details</h1>
           <div className="py-5">
             <div className="flex flex-col md:flex-row justify-between gap-6 mb-6 md:mb-0">
-              <div className="basis-[50%]  flex flex-col gap-3 md:my-6">
-                <label htmlFor="">first name</label>
+              <div className="basis-[50%] flex flex-col gap-3 md:my-6">
+                <label htmlFor="first-name">First name</label>
                 <input
+                  id="first-name"
                   type="text"
-                  className=" border-[1px] rounded-[10px] p-3 md:px-4 outline-none "
+                  className="border-[1px] rounded-[10px] p-3 md:px-4 outline-none"
                 />
               </div>
               <div className="basis-[50%] flex flex-col gap-3 md:my-6">
-                <label htmlFor="">last name</label>
+                <label htmlFor="last-name">Last name</label>
                 <input
+                  id="last-name"
                   type="text"
-                  className=" border-[1px] rounded-[10px] p-3 md:px-4 outline-none "
+                  className="border-[1px] rounded-[10px] p-3 md:px-4 outline-none"
                 />
               </div>
             </div>
             <div className="flex flex-col gap-3">
-              <label htmlFor="">Company Name (Optional)</label>
+              <label htmlFor="company-name">Company Name (Optional)</label>
               <input
+                id="company-name"
                 type="text"
-                className="lg:w-[453px] border-[1px] rounded-[10px] p-3 md:px-8 outline-none "
+                className="lg:w-[453px] border-[1px] rounded-[10px] p-3 md:px-8 outline-none"
               />
             </div>
             <div className="flex flex-col gap-3 my-6">
-              <label htmlFor="">Country / Region</label>
+              <label htmlFor="country-region">Country / Region</label>
               <input
+                id="country-region"
                 type="text"
-                className="lg:w-[453px] border-[1px] rounded-[10px] p-3 md:px-8 outline-none "
+                className="lg:w-[453px] border-[1px] rounded-[10px] p-3 md:px-8 outline-none"
               />
             </div>
             <div className="flex flex-col gap-3 my-6">
-              <label htmlFor="">Street address</label>
+              <label htmlFor="street-address">Street address</label>
               <input
+                id="street-address"
                 type="text"
-                className="lg:w-[453px] border-[1px] rounded-[10px] p-3 md:px-8 outline-none "
+                className="lg:w-[453px] border-[1px] rounded-[10px] p-3 md:px-8 outline-none"
               />
             </div>
             <div className="flex flex-col gap-3 my-6">
-              <label htmlFor="">Town / City</label>
+              <label htmlFor="town-city">Town / City</label>
               <input
+                id="town-city"
                 type="text"
-                className="lg:w-[453px] border-[1px] rounded-[10px] p-3 md:px-8 outline-none "
+                className="lg:w-[453px] border-[1px] rounded-[10px] p-3 md:px-8 outline-none"
               />
             </div>
             <div className="flex flex-col gap-3 my-6">
-              <label htmlFor="">Province</label>
+              <label htmlFor="province">Province</label>
               <input
+                id="province"
                 type="text"
-                className="lg:w-[453px] border-[1px] rounded-[10px] p-3 md:px-8 outline-none "
+                className="lg:w-[453px] border-[1px] rounded-[10px] p-3 md:px-8 outline-none"
               />
             </div>
             <div className="flex flex-col gap-3 my-6">
-              <label htmlFor="">ZIP code</label>
+              <label htmlFor="zip-code">ZIP code</label>
               <input
+                id="zip-code"
                 type="text"
-                className="lg:w-[453px] border-[1px] rounded-[10px] p-3 md:px-8 outline-none "
+                className="lg:w-[453px] border-[1px] rounded-[10px] p-3 md:px-8 outline-none"
               />
             </div>
             <div className="flex flex-col gap-3 my-6">
-              <label htmlFor="">Phone</label>
+              <label htmlFor="phone">Phone</label>
               <input
+                id="phone"
                 type="text"
-                className="lg:w-[453px] border-[1px] rounded-[10px] p-3 md:px-8 outline-none "
+                className="lg:w-[453px] border-[1px] rounded-[10px] p-3 md:px-8 outline-none"
               />
             </div>
             <div className="flex flex-col gap-3 my-6">
-              <label htmlFor="">Email address</label>
+              <label htmlFor="email">Email address</label>
               <input
+                id="email"
                 type="text"
-                className="lg:w-[453px] border-[1px] rounded-[10px] p-3 md:px-8 outline-none "
+                className="lg:w-[453px] border-[1px] rounded-[10px] p-3 md:px-8 outline-none"
               />
             </div>
             <div>
               <input
                 type="text"
-                placeholder="additional information"
-                className="lg:w-[453px] border-[1px] rounded-[10px] p-3 md:px-8 outline-none "
+                placeholder="Additional information"
+                className="lg:w-[453px] border-[1px] rounded-[10px] p-3 md:px-8 outline-none"
               />
             </div>
           </div>
         </div>
-        <div className=" py-[1rem]">
+        <div className="py-[1rem]">
           <div className="flex justify-between border-b-[1px] border-[#D9D9D9] leading-[2.25rem] mb-5 pb-6">
             <div>
               <h1 className="text-[1.5rem] font-medium">Product</h1>
               <p>
-                <span className=" text-[#9F9F9F]">Asgaard sofa</span> x 1
+                <span className="text-[#9F9F9F]">Asgaard sofa</span> x 1
               </p>
               <p className="text-[1.1rem] font-semibold">Subtotal</p>
               <p className="text-[1.1rem] font-semibold">Total</p>
@@ -148,12 +157,17 @@ export default function Checkout() {
             </p>
             <div className="text-[#9F9F9F] py-2 flex flex-col gap-3">
               <div>
-                <input type="radio" className="mr-3" />
-                <label htmlFor="">Direct Bank Transfer</label>
+                <input
+                  type="radio"
+                  id="bank-transfer"
+                  name="payment"
+                  className="mr-3"
+                />
+                <label htmlFor="bank-transfer">Direct Bank Transfer</label>
               </div>
               <div>
-                <input type="radio" className="mr-3" />
-                <label htmlFor="">Cash On Delivery</label>
+                <input type="radio" id="cod" name="payment" className="mr-3" />
+                <label htmlFor="cod">Cash On Delivery</label>
               </div>
             </div>
             <p>
@@ -162,7 +176,7 @@ export default function Checkout() {
               other purposes described in our privacy policy.
             </p>
             <button className="border-[1px] rounded-[15px] px-[3rem] py-[0.5rem] border-black text-center mt-7 capitalize">
-              place order
+              Place order
             </button>
           </div>
         </div>
