@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-
 import Link from "next/link";
 import Image from "next/image";
 import { RiContactsLine } from "react-icons/ri";
@@ -10,6 +9,7 @@ import {
   AiOutlineClose,
   AiOutlineMenu,
 } from "react-icons/ai";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -23,12 +23,16 @@ const Navbar = () => {
   const toggleCart = () => {
     setIsCartOpen(!isCartOpen);
   };
+  const pathname = usePathname();
+  const navbarBg = pathname === "/" ? "bg-[#FBEBB5]" : "bg-white";
 
   return (
     <header>
-      <div className="w-full px-[2rem] md:px-[3rem] lg:px-[4rem] xl:px-[6rem]">
+      <div
+        className={`${navbarBg} w-full px-[2rem] md:px-[3rem] lg:px-[4rem] xl:px-[6rem]`}
+      >
         {/*  */}
-        <div className="h-[80px] bg-whit flex justify-between md:justify-end md:gap-[10rem] xl:gap-[18rem] items-center ">
+        <div className="h-[80px] bg-none flex justify-between md:justify-end md:gap-[10rem] xl:gap-[18rem] items-center ">
           <nav className="hidden md:flex md:gap-9 lg:gap-12 font-medium">
             <Link href="/">Home</Link>
             <Link href="/shop">Shop</Link>

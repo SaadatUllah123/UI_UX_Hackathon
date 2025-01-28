@@ -1,10 +1,23 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { FaFacebook, FaLinkedin } from 'react-icons/fa';
-import { AiFillTwitterCircle } from 'react-icons/ai';
-import { useState } from 'react';
+"use client";
 
-const ProductDetails = () => {
+import { urlFor } from "@/sanity/lib/image";
+import Image from "next/image";
+import Link from "next/link";
+import React, { useState } from "react";
+import { AiFillTwitterCircle } from "react-icons/ai";
+import { FaFacebook, FaLinkedin } from "react-icons/fa";
+
+export default function ProductDetail({
+  image,
+  title,
+  price,
+  description
+}: {
+  image: string;
+  title: string;
+  price: number;
+  description:string
+}) {
   const [quantity, setQuantity] = useState(1);
 
   return (
@@ -12,33 +25,33 @@ const ProductDetails = () => {
       {/* Image Gallery */}
       <div className="flex gap-5 justify-center">
         <div className="flex flex-col gap-5 items-start justify-start">
-          {['/Maya_sofa_three_seater_2.png', '/Outdoor_sofa_set_2.png', '/Outdoor_sofa_set_2.png', '/Stuart_sofa_1.png'].map((src, index) => (
-            <div key={index} className="w-[75px] h-[80px] bg-[#FFF9E5] rounded-[10px] flex justify-center items-center">
+          {[image,image,image,image].map((image, index) => (
+            <div key={index} className=" rounded-[10px] flex justify-center items-center">
               <Image
-                src={src}
+                src={urlFor(image).url()}
                 alt="Thumbnail"
                 width={83}
                 height={55}
-                className="w-16 h-16 rounded-lg cursor-pointer"
+                className="w-[75px] h-[80px] rounded-lg cursor-pointer"
               />
             </div>
           ))}
         </div>
-        <div className="w-[423px] md:h-[500px] bg-[#FFF9E5] rounded-[10px] flex justify-center items-center">
+        <div className=" rounded-[10px] flex justify-center items-cente">
           <Image
-            src="/Asgaard_sofa.png"
+            src={urlFor(image).url()}
             alt="Product"
             width={481}
             height={391}
-            className="w-full h-auto rounded-lg"
+            className="w-[423px] md:h-[450px] rounded-lg"
           />
         </div>
       </div>
 
       {/* Product Details */}
       <div className="flex flex-col sm:m-auto">
-        <h1 className="text-[30px] xl:text-[42px]">Asgaard Sofa</h1>
-        <p className="text-[20px] md:text-[24px] font-medium text-[#9F9F9F]">Rs. 250,000.00</p>
+        <h1 className="text-[30px] xl:text-[42px]">{title}</h1>
+        <p className="text-[20px] md:text-[24px] font-medium text-[#9F9F9F]">{`Rs. ${price}`}</p>
         <div className="flex items-center mt-2">
           <span className="flex items-center text-yellow-400">
             {[...Array(5)].map((_, index) => (
@@ -49,12 +62,7 @@ const ProductDetails = () => {
           </span>
           <span className="border-l-[1px] text-[13px] ml-3 pl-3 text-[#9F9F9F]">5 Customer Reviews</span>
         </div>
-        <p className="text-[13px] mt-5">
-          Setting the bar as one of the loudest speakers in its class, the <br />
-          Kilburn is a compact, stout-hearted hero with a well-balanced <br />
-          audio which boasts a clear midrange and extended highs for a <br />
-          sound.
-        </p>
+        <p className=" mt-5">{description}</p>
         <div className="mt-4">
           <h2 className="text-[14px] text-[#9F9F9F]">Size</h2>
           <div className="flex items-center mt-2 space-x-4">
@@ -130,6 +138,4 @@ const ProductDetails = () => {
       </div>
     </div>
   );
-};
-
-export default ProductDetails;
+}

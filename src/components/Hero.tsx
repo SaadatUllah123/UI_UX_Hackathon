@@ -1,36 +1,23 @@
+import { client } from "@/sanity/lib/client";
+import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { CiCalendar } from "react-icons/ci";
-
 import { FaRegClock } from "react-icons/fa";
 
-// import img from "/Rocket-single-seater.png";
+async function fetchProducts(): Promise<Product[]> {
+  const query = `*[_type == "product"][0..3] {
+    "id": _id,
+    name,
+    price,
+    "image": image.asset._ref
+  }`;
 
-export default function Hero() {
-  const Products = [
-    {
-      title: "Trenton modular sofa_3",
-      img: "/products/product_1.png",
-      price: "Rs. 25,000.00",
-    },
-    {
-      title: "Granite dining table with dining chair",
-      img: "/products/product_2.png",
-      price: "Rs. 25,000.00",
-    },
-    {
-      title: "Outdoor bar table and stool",
-      img: "/products/product_3.png",
-      price: "Rs. 25,000.00",
-    },
-    {
-      title: "Plain console with teak mirror",
-      img: "/products/product_4.png",
-      price: "Rs. 25,000.00",
-    },
-  ];
+  return await client.fetch(query);
+}
 
+export default async function Hero() {
   const blogPosts = [
     {
       src: "/blogs/blog_1.jpeg",
@@ -51,10 +38,12 @@ export default function Hero() {
       time: "5 min",
     },
   ];
+  const products = await fetchProducts();
+
   return (
     <main>
       <section>
-        <div className="bg-[#FBEBB5] flex flex-col-reverse md:flex-row justify-between items-center lg:gap-[5rem] pb-[2.5rem] md:pb-0 capitalize">
+        <div className="bg-[#FBEBB5] h-full flex flex-col-reverse md:flex-row justify-between items-center lg:gap-[5rem] pb-[2.5rem] md:pb-0 capitalize">
           <div className="md:pl-[5rem] xl:pl-[8rem]">
             <h1 className="text-[35px] sm:text-[40px] md:text-[48px] lg:text-[53px] xl:text-[62px] font-medium">
               Rocket single seater
@@ -118,24 +107,22 @@ export default function Hero() {
             suspension, floor and table lights.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:grid-cols-4 py-7 px-[2rem] lg:px-[4rem] xl:px-[5rem]">
-          {Products.map((product, index) => {
-            return (
-              <Link href={`/shop/${index + 1}`} key={index}>
-                <div className="">
-                  <Image
-                    src={product.img}
-                    alt={product.title}
-                    width={1000}
-                    height={1000}
-                    className="w-full h-[287px]"
-                  />
-                  <h1>{product.title}</h1>
-                  <p>{product.price}</p>
-                </div>
-              </Link>
-            );
-          })}
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 py-7 px-[2rem] lg:px-[4rem] xl:px-[5rem]">
+          {products.map((product: Product) => (
+            <Link key={product.id} href={`/shop/${product.id}`}>
+              <div className="">
+                <Image
+                  src={urlFor(product.image).url()}
+                  alt={product.name}
+                  width={1000}
+                  height={1000}
+                  className="w-full h-[287px] rounded-[10px]"
+                />
+                <h1 className="font-semibold py-1">{product.name}</h1>
+                <p className="font-medium">{product.price}</p>
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
 
