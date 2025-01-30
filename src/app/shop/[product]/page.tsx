@@ -84,17 +84,21 @@ export default async function ProductPage({
             {/* Additional Images */}
             <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-5">
               <div className="h-[348px] bg-[#FFF9E5] rounded-[10px] flex justify-center items-center">
-                <img
+                <Image
                   src="/cloud_sofa_1.png"
                   alt="Sofa Image"
                   className="w-auto h-auto rounded-lg"
+                  width={1000}
+                  height={1000}
                 />
               </div>
               <div className="h-[348px] bg-[#FFF9E5] rounded-[10px] flex justify-center items-center">
-                <img
+                <Image
                   src="/cloud_sofa_2.png"
                   alt="Sofa Image"
                   className="w-auto h-auto rounded-lg"
+                  width={1000}
+                  height={1000}
                 />
               </div>
             </div>

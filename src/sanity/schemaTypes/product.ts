@@ -1,5 +1,5 @@
-export default {
-    name: 'product',
+const product = {
+  name: 'product',
     title: 'Product',
     type: 'document',
     fields: [
@@ -66,3 +66,6 @@ export default {
       
     ],
   };
+
+
+  export default product;

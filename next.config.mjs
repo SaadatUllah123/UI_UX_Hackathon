@@ -1,6 +1,10 @@
-export default {
-    images: {
-      domains: ['cdn.sanity.io'],
-    },
-  };
-  
+export default { 
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cdn.sanity.io",
+      },
+    ],
+  },
+};
